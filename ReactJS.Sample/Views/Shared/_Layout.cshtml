@@ -1,13 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@this.ViewBag.Title</title>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.10.0/react.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
-    
+    @Scripts.Render("~/bundles/react")
+    @Scripts.Render("~/bundles/showdown")
+    @Scripts.Render("~/bundles/tutorial")
     @this.RenderSection("Script", false)
 
 </head>
@@ -16,5 +17,6 @@
     <div>
         @this.RenderBody()
     </div>
+@Html.ReactInitJavaScript()
 </body>
 </html>

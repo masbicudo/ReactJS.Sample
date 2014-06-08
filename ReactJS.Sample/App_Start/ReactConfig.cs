@@ -15,10 +15,9 @@ namespace ReactJS.Sample
             // your components as well as all of their dependencies.
             // See http://reactjs.net/ for more information.
 
-            // Example:
-            //ReactSiteConfiguration.Configuration
-            //    .AddScript("~/Scripts/First.jsx")
-            //    .AddScript("~/Scripts/Second.jsx");
+            ReactSiteConfiguration.Configuration
+                .AddScript("~/Scripts/showdown.min.js")
+                .AddScript("~/Scripts/Tutorial.jsx");
         }
     }
 }

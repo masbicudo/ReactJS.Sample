@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using ReactJS.Sample.ApiControllers;
 
 namespace ReactJS.Sample.Controllers
 {
@@ -14,7 +15,8 @@ namespace ReactJS.Sample.Controllers
         /// <returns>ActionResult that renders the main page.</returns>
         public ActionResult Index()
         {
-            return this.View();
+            var commentsApi = new CommentsApiController();
+            return this.View(commentsApi.Get());
         }
     }
 }
