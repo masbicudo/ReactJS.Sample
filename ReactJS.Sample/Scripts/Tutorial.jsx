@@ -16,11 +16,12 @@ var CommentBox = React.createClass({
 
         var data = JSON.stringify(comment);
 
+		var _this = this;
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState == 4) {
-                comment.Id = parseint(this.responseText);
-                this.setState({data: newComments});
+                comment.Id = parseInt(this.responseText);
+                _this.setState({data: newComments});
             }
         }
         xhr.open('post', this.props.submitUrl, true);
@@ -93,7 +94,7 @@ var CommentForm = React.createClass({
 var converter = new Showdown.converter();
 var Comment = React.createClass({
     render: function() {
-        var rawMarkup = converter.makeHtml(this.props.children.toString());
+        var rawMarkup = converter.makeHtml((this.props.children || "").toString());
         return (
             <div className="comment">
                 <h2 className="commentAuthor">
